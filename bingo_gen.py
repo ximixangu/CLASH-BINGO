@@ -15,6 +15,9 @@ MODIFIERS_RANDOM_RATE = 1
 from PIL import Image
 from pathlib import Path
 import random
+import streamlit as st
+from PIL import Image
+import io
 
 from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS
 
@@ -208,4 +211,17 @@ def generate_bingo_card():
 
 
 if __name__ == "__main__":
-    generate_bingo_card()
+    st.title("Generador de Bingo Clash Royale")
+
+    # Controles para parámetros (ejemplo)
+    modifiers_rate = st.slider("Tasa de modificadores", 0.0, 2.0, 1.0)
+
+    # Botón para generar bingo
+    if st.button("Generar Bingo"):
+        bingo_img = generate_bingo_card()
+        
+        # Mostrar imagen en app
+        buf = io.BytesIO()
+        bingo_img.save(buf, format="PNG")
+        buf.seek(0)
+        st.image(buf, caption="Carta de Bingo Generada", use_column_width=True)
