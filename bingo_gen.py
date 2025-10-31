@@ -194,7 +194,7 @@ def generate_bingo_card(
             img.thumbnail((190, 190))
             bingo.paste(img, (x, y), img)
 
-            if random.random() < MODIFIERS_RANDOM_RATE and modifiers:
+            if random.random() < modifiers_rate and modifiers:
                 excluded = set(incompatible_modifiers.get(cell_type, []))
                 if last_img:
                     excluded.update(incompatible_modifiers.get(last_img, []))
