@@ -208,6 +208,7 @@ def generate_bingo_card():
     bg = Image.open(ASSETS_PATH / "preset.png")
     bg.paste(bingo, (60, 820), bingo)
     bg.show()
+    return bg
 
 
 if __name__ == "__main__":
