@@ -217,20 +217,28 @@ def generate_bingo_card(
 if __name__ == "__main__":
     st.title("Bingo Clash Royale")
 
-    # Controles para parámetros (ejemplo)
-    modifiers_rate = st.slider("Modifier rate", 0.0, 2.0, 1.0)
-    last_hits_rate = st.slider("Last hit weight", 0.0, 5.0, 100.0)
-    win_conditions_rate = st.slider("Win condition weight", 0.0, 5.0, 100.0)
-    misc_rate = st.slider("Miscellaneous weight", 0.0, 5.0, 100.0)
-    triplet_rate = st.slider("Triplet weight", 0.0, 5.0, 100.0)
-    duplicate_rate = st.slider("Duplicate weight", 0.0, 5.0, 100.0)
-    arena_rate = st.slider("Arena weight", 0.0, 5.0, 100.0)
-    elixir_rate = st.slider("Elixir weight", 0.0, 5.0, 100.0)
-    
+    # Inicializar estado para la imagen si no existe
+    if "bingo_img" not in st.session_state:
+        st.session_state.bingo_img = None
+
+    # Layout compacto con columnas para sliders
+    with st.expander("Parameters", expanded=False):
+        col1, col2 = st.columns(2)
+        with col1:
+            modifiers_rate = st.slider("Modifier rate", 0.0, 2.0, 1.0)
+            triplet_rate = st.slider("Triplet weight", 0.0, 5.0, 1.0)
+            arena_rate = st.slider("Arena weight", 0.0, 5.0, 1.0)
+            win_conditions_rate = st.slider("Win condition weight", 0.0, 5.0, 1.0)
+        with col2:
+            last_hits_rate = st.slider("Last hit weight", 0.0, 5.0, 1.0)
+            duplicate_rate = st.slider("Duplicate weight", 0.0, 5.0, 1.0)
+            misc_rate = st.slider("Miscellaneous weight", 0.0, 5.0, 1.0)
+            elixir_rate = st.slider("Elixir weight", 0.0, 5.0, 1.0)
+        
 
     # Botón para generar bingo
     if st.button("Generate Bingo"):
-        bingo_img = generate_bingo_card(
+        st.session_state.bingo_img = generate_bingo_card(
             modifiers_rate=modifiers_rate,
             cell_weights={
                 'last_hit': last_hits_rate,
@@ -242,9 +250,10 @@ if __name__ == "__main__":
                 'elixir': elixir_rate,
             }
         )
-        
-        # Mostrar imagen en app
+
+    # Mostrar imagen persistente si existe
+    if st.session_state.bingo_img:
         buf = io.BytesIO()
-        bingo_img.save(buf, format="PNG")
+        st.session_state.bingo_img.save(buf, format="PNG")
         buf.seek(0)
-        st.image(buf, caption="Carta de Bingo Generada", use_column_width=True)
+        st.image(buf, caption="Bingo Card", use_column_width=True)
