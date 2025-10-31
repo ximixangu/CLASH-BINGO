@@ -165,7 +165,10 @@ def create_cell_content(cell_type):
     return img
 
 
-def generate_bingo_card():
+def generate_bingo_card(
+        modifiers_rate=MODIFIERS_RANDOM_RATE,
+        cell_weights=CELL_TYPE_WEIGHTS
+):
     global last_img
     bingo = Image.open(ASSETS_PATH / "empty_card.png")
     bingo = bingo.resize((1000, 1000))
@@ -185,7 +188,7 @@ def generate_bingo_card():
             x = 7 + j * 199
             y = 7 + i * 199
 
-            cell_type = weighted_choice(CELL_TYPE_WEIGHTS)
+            cell_type = weighted_choice(cell_weights)
             img = create_cell_content(cell_type)
 
             img.thumbnail((190, 190))
@@ -212,14 +215,33 @@ def generate_bingo_card():
 
 
 if __name__ == "__main__":
-    st.title("Generador de Bingo Clash Royale")
+    st.title("Bingo Clash Royale")
 
     # Controles para parámetros (ejemplo)
-    modifiers_rate = st.slider("Tasa de modificadores", 0.0, 2.0, 1.0)
+    modifiers_rate = st.slider("Modifier rate", 0.0, 2.0, 1.0)
+    last_hits_rate = st.slider("Last hit weight", 0.0, 5.0, 100.0)
+    win_conditions_rate = st.slider("Win condition weight", 0.0, 5.0, 100.0)
+    misc_rate = st.slider("Miscellaneous weight", 0.0, 5.0, 100.0)
+    triplet_rate = st.slider("Triplet weight", 0.0, 5.0, 100.0)
+    duplicate_rate = st.slider("Duplicate weight", 0.0, 5.0, 100.0)
+    arena_rate = st.slider("Arena weight", 0.0, 5.0, 100.0)
+    elixir_rate = st.slider("Elixir weight", 0.0, 5.0, 100.0)
+    
 
     # Botón para generar bingo
-    if st.button("Generar Bingo"):
-        bingo_img = generate_bingo_card()
+    if st.button("Generate Bingo"):
+        bingo_img = generate_bingo_card(
+            modifiers_rate=modifiers_rate,
+            cell_weights={
+                'last_hit': last_hits_rate,
+                'win_condition': win_conditions_rate,
+                'misc': misc_rate,
+                'triplet': triplet_rate,
+                'duplicate': duplicate_rate,
+                'arena': arena_rate,
+                'elixir': elixir_rate,
+            }
+        )
         
         # Mostrar imagen en app
         buf = io.BytesIO()
