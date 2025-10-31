@@ -136,6 +136,8 @@ def create_cell_content(cell_type):
             img = Image.open(ELIXIR_PATH / img_name)
             files_elixir.remove(img_name)
             img.thumbnail((190, 190))
+        else:
+            img = create_cell_content('misc')
 
     elif cell_type == 'arena':
         img = Image.new('RGBA', (190, 190), (255, 255, 255, 0))
@@ -227,15 +229,15 @@ if __name__ == "__main__":
     with st.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
-            modifiers_rate = st.slider("Modifier rate", 0.0, 1.0, 0.2)
-            triplet_rate = st.slider("Triplet weight", 0.0, 5.0, 1.0)
-            arena_rate = st.slider("Arena weight", 0.0, 5.0, 0.2)
-            win_conditions_rate = st.slider("Win condition weight", 0.0, 5.0, 1.0)
+            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.2)
+            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
+            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.2)
+            win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
         with col2:
-            last_hits_rate = st.slider("Last hit weight", 0.0, 5.0, 1.0)
-            duplicate_rate = st.slider("Duplicate weight", 0.0, 5.0, 1.0)
-            misc_rate = st.slider("Miscellaneous weight", 0.0, 5.0, 1.0)
-            elixir_rate = st.slider("Elixir weight", 0.0, 5.0, 0.2)
+            last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
+            duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
+            misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
+            elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.2)
         
 
     # Botón para generar bingo
