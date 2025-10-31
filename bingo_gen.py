@@ -185,6 +185,7 @@ def generate_bingo_card(
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['Time.png'],
         'Perfection.png': ['RedCrown.png'],
+        'Buildings.png': ['Time.png', 'elixir_5.png'],
     }
 
     for i in range(5):
@@ -229,15 +230,15 @@ if __name__ == "__main__":
     with st.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
-            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.2)
+            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
             triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
-            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.2)
+            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
             win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
         with col2:
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
             misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
-            elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.2)
+            elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
     # Botón para generar bingo
@@ -261,3 +262,4 @@ if __name__ == "__main__":
         st.session_state.bingo_img.save(buf, format="PNG")
         buf.seek(0)
         st.image(buf, caption="Bingo Card", use_column_width=True)
+        
