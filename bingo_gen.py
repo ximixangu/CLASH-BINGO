@@ -161,6 +161,8 @@ def create_cell_content(cell_type):
 
             combined.thumbnail((190, 190))
             img.paste(combined, (0, 0), combined)
+        else:
+            img = create_cell_content('misc')
 
     return img
 
