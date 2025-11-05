@@ -75,7 +75,7 @@ DUPLICATES = [
     ["Miner.png", "x3.png"],
     ["Balloon.png", "x2.png"],
     ["Sparky.png", "x2.png"],
-    ["Firecracker.png", "x3.png"],
+    ["Firecracker.png", "x4.png"],
     ["Graveyard.png", "x2.png"],
     ["SuspiciousBush.png", "x3.png"],
     ["Knight.png", "x4.png"],
@@ -92,9 +92,9 @@ DUPLICATES = [
     ["EliteBarbarians.png", "x2.png"],
     ["ElixirCollector.png", "x3.png"],
     ["Bowler.png", "x3.png"],
-    ["Pheonix.png", "x4.png"],
-    ["MegaMinion.png", "x4.png"],
-    ["WallBreakers.png", "x3.png"],
+    ["Pheonix.png", "x3.png"],
+    ["MegaMinion.png", "x3.png"],
+    ["WallBreakers.png", "x2.png"],
     ["IceGolem.png", "x5.png"]
 ]
 

@@ -186,6 +186,7 @@ def generate_bingo_card(
         'Spells.png': ['Time.png'],
         'Perfection.png': ['RedCrown.png'],
         'Buildings.png': ['Time.png', 'elixir_5.png'],
+        'arena': ['elixir_3.png'],
     }
 
     for i in range(5):
@@ -217,7 +218,6 @@ def generate_bingo_card(
     bg.paste(bingo, (60, 820), bingo)
     bg.show()
     return bingo
-
 
 if __name__ == "__main__":
     st.title("Bingo Clash Royale")
