@@ -253,12 +253,19 @@ def get_cell_description(cell_type):
     }
     return descriptions.get(cell_type, "Realiza el objetivo especial.")
 
+    
 if __name__ == "__main__":
     st.title("Bingo Clash Royale Interactivo")
 
     if 'bingo_grid' not in st.session_state:
         st.session_state.bingo_grid = None
 
+    def img_to_bytes(img):
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        buf.seek(0)
+        return buf.read()
+    
     if st.button("Generar tablero interactivo"):
         imgs, explanations = generate_bingo_grid()
         # Convierte imágenes PIL a bytes
@@ -266,12 +273,6 @@ if __name__ == "__main__":
             [img_to_bytes(img) for img in row] for row in imgs
         ]
         st.session_state.bingo_expl = explanations
-
-    def img_to_bytes(img):
-        buf = io.BytesIO()
-        img.save(buf, format="PNG")
-        buf.seek(0)
-        return buf.read()
 
     if st.session_state.bingo_grid:
         st.markdown("Haz clic/tap en una casilla para ver qué debes hacer:")
