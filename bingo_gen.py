@@ -220,70 +220,47 @@ def generate_bingo_card(
     bg.show()
     return bingo
 
-def generate_bingo_grid(
-    modifiers_rate=MODIFIERS_RANDOM_RATE,
-    cell_weights=CELL_TYPE_WEIGHTS
-):
-    cell_images = []
-    cell_explanations = []
-    modifiers = [f.name for f in MODIFIERS_PATH.glob("*.png")]
-    for i in range(5):
-        row_imgs = []
-        row_expls = []
-        for j in range(5):
-            cell_type = weighted_choice(cell_weights)
-            img = create_cell_content(cell_type)
-            desc = get_cell_description(cell_type)  # Debes implementar esta función
-            img.thumbnail((190, 190))
-            row_imgs.append(img.copy())
-            row_expls.append(desc)
-        cell_images.append(row_imgs)
-        cell_explanations.append(row_expls)
-    return cell_images, cell_explanations
-
-def get_cell_description(cell_type):
-    descriptions = {
-        'triplet': "Juega tres cartas distintas en una partida.",
-        'win_condition': "Gana una partida usando esta condición.",
-        'last_hit': "La última carta jugada debe ser esta.",
-        'duplicate': "Juega dos veces la misma carta.",
-        'misc': "Realiza el reto especial de esta casilla.",
-        'elixir': "Gasta la cantidad de elixir indicada.",
-        'arena': "Juega en estas dos arenas distintas.",
-    }
-    return descriptions.get(cell_type, "Realiza el objetivo especial.")
-
-    
 if __name__ == "__main__":
-    st.title("Bingo Clash Royale Interactivo")
+    st.title("Bingo Clash Royale")
 
-    if 'bingo_grid' not in st.session_state:
-        st.session_state.bingo_grid = None
+    # Inicializar estado para la imagen si no existe
+    if "bingo_img" not in st.session_state:
+        st.session_state.bingo_img = None
 
-    def img_to_bytes(img):
+    # Layout compacto con columnas para sliders
+    with st.expander("Parameters", expanded=False):
+        col1, col2 = st.columns(2)
+        with col1:
+            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
+            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
+            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
+            win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
+        with col2:
+            last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
+            duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
+            misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
+            elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
+        
+
+    # Botón para generar bingo
+    if st.button("Generate Bingo"):
+        st.session_state.bingo_img = generate_bingo_card(
+            modifiers_rate=modifiers_rate,
+            cell_weights={
+                'last_hit': last_hits_rate,
+                'win_condition': win_conditions_rate,
+                'misc': misc_rate,
+                'triplet': triplet_rate,
+                'duplicate': duplicate_rate,
+                'arena': arena_rate,
+                'elixir': elixir_rate,
+            }
+        )
+
+    # Mostrar imagen persistente si existe
+    if st.session_state.bingo_img:
         buf = io.BytesIO()
-        img.save(buf, format="PNG")
+        st.session_state.bingo_img.save(buf, format="PNG")
         buf.seek(0)
-        return buf.read()
-    
-    if st.button("Generar tablero interactivo"):
-        imgs, explanations = generate_bingo_grid()
-        # Convierte imágenes PIL a bytes
-        st.session_state.bingo_grid = [
-            [img_to_bytes(img) for img in row] for row in imgs
-        ]
-        st.session_state.bingo_expl = explanations
-
-    if st.session_state.bingo_grid:
-        st.markdown("Haz clic/tap en una casilla para ver qué debes hacer:")
-        for i in range(5):
-            cols = st.columns(5)
-            for j in range(5):
-                with cols[j]:
-                    key = f"cell_{i}_{j}"
-                    if st.button("", key=key):
-                        st.session_state['last_exp'] = st.session_state.bingo_expl[i][j]
-                    st.image(st.session_state.bingo_grid[i][j], use_column_width=True)
-
-        if 'last_exp' in st.session_state:
-            st.info(st.session_state['last_exp'])
+        st.image(buf, caption="Bingo Card", use_column_width=True)
+        
