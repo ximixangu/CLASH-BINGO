@@ -334,17 +334,17 @@ if __name__ == "__main__":
     /* Cuando la pantalla sea más pequeña que 600px */
     @media (max-width: 600px) {
     .responsive-title {
-        font-size: 30px !important;
+        font-size: 34px !important;
     }
     .responsive-subtitle {
-        font-size: 8px !important;
+        font-size: 14px !important;
     }
     }
     </style>
     """, unsafe_allow_html=True)
 
     st.markdown(
-        '<span class="responsive-title">Clash Royale Bingo</span> '
+        '<span class="responsive-title">Clash Royale Bingo </span> '
         '<span class="responsive-subtitle">by @pinxevi</span>',
         unsafe_allow_html=True
     )
