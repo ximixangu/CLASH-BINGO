@@ -374,6 +374,6 @@ if __name__ == "__main__":
 
     st.write("" \
     "The objective is to complete any row or column.\n\n" \
-    "Winning each match is required to cross any cell.\n\n" \
-    "\"Toggle Description\" lets you see each cell objective, as well as modifiers (if any).\n\n" \
-    "You can adjust the likelyhood of each cell type by changing the weight on \"Parameters\", located at the sidebar.")
+    "Winning each match is required to check off any cell.\n\n" \
+    "'Toggle Description' button lets you see each cell's objective, as well as modifiers (if any).\n\n" \
+    "You can adjust the likelihood of each cell type by changing the weights under 'Parameters' in the sidebar.")
