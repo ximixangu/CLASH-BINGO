@@ -68,9 +68,9 @@ MODIFIERS_DESCRIPTION = {
     'elixir_3': "Use a deck of 3 or less elixir.",
     'elxir_5': "Use a deck of 5 or more elixir.",
     'Time.png': "Win befor x2 elixir.",
-    'TowerActivation': "Activate enemy King Tower within 20 seconds.",
-    'FullTower': "Have one side-tower full HP.",
-    '3 Crowns': "Get three crowns.",
+    'TowerActivation.png': "Activate enemy King Tower within 20 seconds.",
+    'FullTower.png': "Have one side-tower full HP.",
+    '3Crowns.png': "Get three crowns.",
 }
 
 TRIPLET_RANDOM_RATE = 0.3
@@ -244,7 +244,7 @@ def generate_bingo_card(
 ):
     global last_img
     mod = False
-    
+
     bingo = Image.open(ASSETS_PATH / "empty_card.png")
     bingo = bingo.resize((1000, 1000))
     bingo_text = bingo.copy()
