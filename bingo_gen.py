@@ -55,6 +55,24 @@ MISC_DESCRIPTION = {
     'ThreeMusketeers_Special.png': "Have all your 3 Musketeers hit a tower.",
 }
 
+MODIFIERS_DESCRIPTION = {
+    'Cannoner.png': "Use Cannoner as your Tower troop.",
+    'DaggerDuchess.png': "Use Dagger Duchess as your Tower troop.",
+    'RoyaleChef.png': "Use Royale Chef as your Tower troop.",
+    'Emote.png': "Use an emote for each played card.",
+    'RedCrown.png': "Let your enemy destroy a tower.",
+    'Champion.png': "Have a Champion in your deck.",
+    'MegaKnight.png': "Have MK and use it at least once.",
+    'Sneaky.png': "Have Golem and use it at least once.",
+    '2v2': "Play on 2v2.",
+    'elixir_3': "Use a deck of 3 or less elixir.",
+    'elxir_5': "Use a deck of 5 or more elixir.",
+    'Time.png': "Win befor x2 elixir.",
+    'TowerActivation': "Activate enemy King Tower within 20 seconds.",
+    'FullTower': "Have one side-tower full HP.",
+    '3 Crowns': "Get three crowns.",
+}
+
 TRIPLET_RANDOM_RATE = 0.3
 WIN_CONDITION_RANDOM_RATE = 0.3
 MODIFIERS_RANDOM_RATE = 1
@@ -74,6 +92,7 @@ win_conditions = WIN_CONDITIONS.copy()
 duplicates_list = DUPLICATES.copy()
 text_list = TEXT_DESCRIPTION.copy()
 misc_text_list = MISC_DESCRIPTION.copy()
+modifiers_text_list = MODIFIERS_DESCRIPTION.copy()
 last_img = None
 
 CARDS_PATH = Path("assets/cards")
@@ -255,16 +274,9 @@ def generate_bingo_card(
                 text = text_list.get(cell_type, "")
 
             img.thumbnail((190, 190))
-            text_img = multiple_text_image(
-                parrafos = [
-                    text,
-                ],
-                tam_fuente=15,
-                max_line_length=20,
-            )
-            text_img.thumbnail((190, 190))
 
             bingo.paste(img, (x, y), img)
+            bingo_text.paste(img, (x, y), img)
 
             if random.random() < modifiers_rate and modifiers:
                 excluded = set(incompatible_modifiers.get(cell_type, []))
@@ -276,10 +288,22 @@ def generate_bingo_card(
                 mod_img = Image.open(MODIFIERS_PATH / modifier_name)
                 mod_img.thumbnail((90, 90))
                 bingo.paste(mod_img, (x + 105, y + 2), mod_img)
-            
-            bingo_text.paste(img, (x, y), img)
+                bingo_text.paste(mod_img, (x + 105, y + 2), mod_img)
+
+            parr = [text]
+            if modifier_name:
+                parr.append(modifiers_text_list.get(modifier_name, ""))
+
+            text_img = multiple_text_image(
+                parrafos= parr,
+                colores = ['white', 'magenta'],
+                tam_fuente=15,
+                max_line_length=20,
+            )
+            text_img.thumbnail((190, 190))
             bingo_text.paste(text_img, (x, y), text_img)
 
+            modifier_name = None
             last_img = None
 
     bingo = bingo.resize((1320, 1320))
