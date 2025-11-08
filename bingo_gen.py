@@ -196,6 +196,7 @@ def generate_bingo_card(
         'Buildings.png': ['Time.png', 'elixir_5.png'],
         'arena': ['elixir_3.png', 'elixir_5.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png'],
+        'LetHimCook.png': ['RoyaleChef.png'],
     }
 
     for i in range(5):
