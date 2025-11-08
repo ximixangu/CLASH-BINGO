@@ -339,7 +339,7 @@ if __name__ == "__main__":
             modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
             triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
             arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
-            win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
+            win_conditions_rate = st.slider("Win. cond. weight", 0.01, 5.0, 1.0)
         with col2:
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
