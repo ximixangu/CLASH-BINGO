@@ -331,6 +331,8 @@ if __name__ == "__main__":
     if "bingo_index" not in st.session_state:
         st.session_state.bingo_index = 0
 
+    st.sidebar.header("Settings")
+
     with st.sidebar.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
