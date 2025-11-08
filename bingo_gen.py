@@ -8,6 +8,53 @@ CELL_TYPE_WEIGHTS = {
     'elixir': 3,
 }
 
+TEXT_DESCRIPTION = {
+    'win_condition': "All tower damage must be done with X.",
+    'last_hit': "Destroy at least one tower with X.",
+    'arena': "Use a deck containing only cards from these arenas.",
+    'duplicate': "Have X cards alive on battlefield at once.",
+    'elixir': "Use a deck that has X.* elixir average.",
+    'triplet': "Use a deck that contains the three cards."
+}
+
+MISC_DESCRIPTION = {
+    'Balloon_Special.png': "Deal 5 hits to towers with 1 Balloon.",
+    'Bandit_Special.png': "Have one Bandit dash 4 times.",
+    'BossBandit_Special.png': "Have one Boss Bandit dash 5 times.",
+    'Bowler_Special.png': "Hit 10+ units with 1 Bowler throw.",
+    'Buildings.png': "Use a deck only with buildings.",
+    'Coc.png': "Use a deck only with Clash Of Clans units.",
+    'Commons.png': "Use a deck only with common cards.",
+    'Electrics.png': "Use a deck with 6 electric cards.",
+    'Epics.png': "Use a deck only with epic cards.",
+    'Executioner_Special.png': "Kill all opponent's unit types with one Executioner",
+    'Flying.png': "Use a deck only with air troops.",
+    'Rares.png': "Use a deck only with rare cards.",
+    'Girls.png': "Use a deck only with female cards.",
+    'Goblins.png': "Use a deck only with goblin cards.",
+    'KingTower.png': "Have only your King Tower alive.",
+    'Legendaries.png': "Use a deck with only legendary cards.",
+    'LetHimCook.png': "Have a level 18 troop.",
+    'LittlePrince_Special.png': "Destroy at least one tower with Guardienne.",
+    'Log_Special.png': "Kill a Lumberjack with The Log.",
+    'MegaKnight_Special.png': "Have one MK jump 4 times.",
+    'Monk_Special.png': "Hit a tower with any Monk deflected spell.",
+    'Mother_Special.png': "Have one Mother Witch summon 10 pigs.",
+    'PEKKA_Special.png': "Kill a PEKKA with a Mini PEKKA.",
+    'Perfection.png': "Win without troops reaching your towers.",
+    'Prince_Special.png': "Have one Prince do 3 sprints.",
+    'Princess_Special.png': "Have one Princess shoot 10 times.",
+    'Random.png': "Use your last oppenent's deck.",
+    'Rocket_King_Tower.png': "Rocket the enemy King Tower within 20 seconds.",
+    'Skeletons.png': "Use a deck with only skeleton cards.",
+    'Space1.png': "Place troops/buildings only on the displayed squares.",
+    'Space2.png': "Place troops/buildings only on the displayed squares.",
+    'Space3.png': "Place troops/buildings only on the displayed squares.",
+    'Space4.png': "Place troops/buildings only on the displayed squares.",
+    'Spells.png': "Use a deck with only spell cards.",
+    'ThreeMusketeers_Special.png': "Have all your 3 Musketeers hit a tower.",
+}
+
 TRIPLET_RANDOM_RATE = 0.3
 WIN_CONDITION_RANDOM_RATE = 0.3
 MODIFIERS_RANDOM_RATE = 1
@@ -20,7 +67,7 @@ from PIL import Image
 from text_gen import multiple_text_image
 import io
 
-from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS, TEXT_DESCRIPTION, MISC_DESCRIPTION
+from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS
 
 triplet_list = TRIPLETS_LIST.copy()
 win_conditions = WIN_CONDITIONS.copy()
