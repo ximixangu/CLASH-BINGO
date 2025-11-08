@@ -17,13 +17,16 @@ from pathlib import Path
 import random
 import streamlit as st
 from PIL import Image
+from text_gen import multiple_text_image
 import io
 
-from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS
+from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS, TEXT_DESCRIPTION, MISC_DESCRIPTION
 
 triplet_list = TRIPLETS_LIST.copy()
 win_conditions = WIN_CONDITIONS.copy()
 duplicates_list = DUPLICATES.copy()
+text_list = TEXT_DESCRIPTION.copy()
+misc_text_list = MISC_DESCRIPTION.copy()
 last_img = None
 
 CARDS_PATH = Path("assets/cards")
@@ -176,6 +179,7 @@ def generate_bingo_card(
     global last_img
     bingo = Image.open(ASSETS_PATH / "empty_card.png")
     bingo = bingo.resize((1000, 1000))
+    bingo_text = bingo.copy()
 
     modifiers = [f.name for f in MODIFIERS_PATH.glob("*.png")]
 
@@ -198,7 +202,21 @@ def generate_bingo_card(
             cell_type = weighted_choice(cell_weights)
             img = create_cell_content(cell_type)
 
+            if cell_type == 'misc':
+                text = misc_text_list.get(last_img, "")
+            else:
+                text = text_list.get(cell_type, "")
+
             img.thumbnail((190, 190))
+            text_img = multiple_text_image(
+                parrafos = [
+                    text,
+                ],
+                tam_fuente=15,
+                max_line_length=20,
+            )
+            text_img.thumbnail((190, 190))
+
             bingo.paste(img, (x, y), img)
 
             if random.random() < modifiers_rate and modifiers:
@@ -212,13 +230,15 @@ def generate_bingo_card(
                 mod_img.thumbnail((90, 90))
                 bingo.paste(mod_img, (x + 105, y + 2), mod_img)
             
+            bingo_text.paste(img, (x, y), img)
+            bingo_text.paste(text_img, (x, y), text_img)
+
             last_img = None
 
     bingo = bingo.resize((1320, 1320))
-    bg = Image.open(ASSETS_PATH / "preset.png")
-    bg.paste(bingo, (60, 820), bingo)
-    bg.show()
-    return bingo
+    # bingo_text.show()
+
+    return bingo, bingo_text
 
 if __name__ == "__main__":
     st.header("Bingo Clash Royale")
@@ -248,19 +268,7 @@ if __name__ == "__main__":
 
     with col1:
         if st.button("Generate Bingo Card"):
-            st.session_state.bingos[0] = generate_bingo_card(
-                modifiers_rate=modifiers_rate,
-                cell_weights={
-                    'last_hit': last_hits_rate,
-                    'win_condition': win_conditions_rate,
-                    'misc': misc_rate,
-                    'triplet': triplet_rate,
-                    'duplicate': duplicate_rate,
-                    'arena': arena_rate,
-                    'elixir': elixir_rate,
-                }
-            )
-            st.session_state.bingos[1] = generate_bingo_card(
+            st.session_state.bingos = generate_bingo_card(
                 modifiers_rate=modifiers_rate,
                 cell_weights={
                     'last_hit': last_hits_rate,
@@ -286,4 +294,4 @@ if __name__ == "__main__":
         if st.session_state.bingo_index == 0:
             st.image(buf, caption="Bingo", use_column_width=True)
         else:
-            st.image(buf, caption="Descriptions", use_column_width=True)        
+            st.image(buf, caption="Descriptions", use_column_width=True)
