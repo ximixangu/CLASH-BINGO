@@ -320,11 +320,11 @@ if __name__ == "__main__":
         initial_sidebar_state="collapsed",
     )    
 
-
-    # with col1:
-    st.header("Clash Royale Bingo")
-    # with col2:
-    st.text(" by @pinxevi")
+    col1, col2, right = st.columns([3, 2, 1])
+    with col1:
+        st.header("Clash Royale Bingo")
+    with col2:
+        st.text(" by @pinxevi")
 
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
