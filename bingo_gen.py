@@ -320,10 +320,35 @@ if __name__ == "__main__":
         initial_sidebar_state="collapsed",
     )    
 
+    import streamlit as st
+
+    st.markdown("""
+    <style>
+    .responsive-title {
+    font-weight: bold;
+    font-size: 40px;
+    }
+    .responsive-subtitle {
+    color: gray;
+    font-size: 14px;
+    }
+
+    /* Cuando la pantalla sea más pequeña que 600px */
+    @media (max-width: 600px) {
+    .responsive-title {
+        font-size: 24px !important;
+    }
+    .responsive-subtitle {
+        font-size: 10px !important;
+    }
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.markdown(
-    '<span style="font-size:40px; font-weight:bold;">Clash Royale Bingo </span>'
-    '<span style="color:gray; font-size:14px;">by @pinxevi</span>',
-    unsafe_allow_html=True
+        '<span class="responsive-title">Clash Royale Bingo</span> '
+        '<span class="responsive-subtitle">by @pinxevi</span>',
+        unsafe_allow_html=True
     )
 
     if "bingos" not in st.session_state:
