@@ -343,7 +343,7 @@ if __name__ == "__main__":
         with col2:
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 1.0)
-            misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
+            misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
