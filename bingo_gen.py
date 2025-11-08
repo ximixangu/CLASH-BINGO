@@ -315,7 +315,10 @@ def generate_bingo_card(
     return bingo, bingo_text
 
 if __name__ == "__main__":
-    st.set_page_config(page_title="Clash Royale Bingo")
+    st.set_page_config(
+        page_title="Clash Royale Bingo",
+        initial_sidebar_state="collapsed",
+    )    
     st.header("Clash Royale Bingo")
 
     if "bingos" not in st.session_state:
@@ -365,6 +368,12 @@ if __name__ == "__main__":
         st.session_state.bingos[st.session_state.bingo_index].save(buf, format="PNG")
         buf.seek(0)
         if st.session_state.bingo_index == 0:
-            st.image(buf, caption="Bingo", use_column_width=True)
+            st.image(buf, caption="Bingo Card", use_column_width=True)
         else:
-            st.image(buf, caption="Descriptions", use_column_width=True)
+            st.image(buf, caption="Card Descriptions", use_column_width=True)
+
+    st.write("" \
+    "The objective is to complete any row or column. \n" \
+    "Winning each match is required to cross any cell. \n\n" \
+    "\"Toggle Description\" lets you see each cell objective, as well as modifiers (if any). \n" \
+    "You can adjust the likelyhood of each cell type by changing the weight on \"Parameters\", located at the sidebar.")
