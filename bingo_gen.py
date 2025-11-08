@@ -244,47 +244,40 @@ if __name__ == "__main__":
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
-    # # Botón para generar bingo
-    # if st.button("Generate Bingo"):
-    #     st.session_state.bingo_img = generate_bingo_card(
-    #         modifiers_rate=modifiers_rate,
-    #         cell_weights={
-    #             'last_hit': last_hits_rate,
-    #             'win_condition': win_conditions_rate,
-    #             'misc': misc_rate,
-    #             'triplet': triplet_rate,
-    #             'duplicate': duplicate_rate,
-    #             'arena': arena_rate,
-    #             'elixir': elixir_rate,
-    #         }
-    #     )
+    col1, col2 = st.columns(2)
 
-    if st.button("Generate Bingo"):
-        st.session_state.bingos[0] = generate_bingo_card(
-            modifiers_rate=modifiers_rate,
-            cell_weights={
-                'last_hit': last_hits_rate,
-                'win_condition': win_conditions_rate,
-                'misc': misc_rate,
-                'triplet': triplet_rate,
-                'duplicate': duplicate_rate,
-                'arena': arena_rate,
-                'elixir': elixir_rate,
-            }
-        )
-        st.session_state.bingos[1] = generate_bingo_card(
-            modifiers_rate=modifiers_rate,
-            cell_weights={
-                'last_hit': last_hits_rate,
-                'win_condition': win_conditions_rate,
-                'misc': misc_rate,
-                'triplet': triplet_rate,
-                'duplicate': duplicate_rate,
-                'arena': arena_rate,
-                'elixir': elixir_rate,
-            }
-        )
-        st.session_state.bingo_index = 0 # Mostrar siempre el primero por defecto
+    with col1:
+        if st.button("Generate Bingo"):
+            st.session_state.bingos[0] = generate_bingo_card(
+                modifiers_rate=modifiers_rate,
+                cell_weights={
+                    'last_hit': last_hits_rate,
+                    'win_condition': win_conditions_rate,
+                    'misc': misc_rate,
+                    'triplet': triplet_rate,
+                    'duplicate': duplicate_rate,
+                    'arena': arena_rate,
+                    'elixir': elixir_rate,
+                }
+            )
+            st.session_state.bingos[1] = generate_bingo_card(
+                modifiers_rate=modifiers_rate,
+                cell_weights={
+                    'last_hit': last_hits_rate,
+                    'win_condition': win_conditions_rate,
+                    'misc': misc_rate,
+                    'triplet': triplet_rate,
+                    'duplicate': duplicate_rate,
+                    'arena': arena_rate,
+                    'elixir': elixir_rate,
+                }
+            )
+            st.session_state.bingo_index = 0  # Mostrar siempre el primero por defecto
+
+    with col2:
+        if st.button("Alternar Bingo"):
+            st.session_state.bingo_index = 1 - st.session_state.bingo_index
+
 
     if st.session_state.bingos[st.session_state.bingo_index]:
         buf = io.BytesIO()
@@ -292,10 +285,6 @@ if __name__ == "__main__":
         buf.seek(0)
         st.image(buf, caption=f"Bingo {st.session_state.bingo_index + 1}", use_column_width=True)
 
-    # Botón para alternar
-    if st.button("Alternar Bingo"):
-        st.session_state.bingo_index = 1 - st.session_state.bingo_index
-        
     # # Mostrar imagen persistente si existe
     # if st.session_state.bingo_img:
     #     buf = io.BytesIO()
