@@ -372,10 +372,10 @@ if __name__ == "__main__":
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
-    col1, col2, right = st.columns([1, 1, 3])
+    col1, col2, right = st.columns([1, 1, 2])
 
     with col1:
-        if st.button("Randomize Card"):
+        if st.button("Generate Bingo"):
             st.session_state.bingos = generate_bingo_card(
                 modifiers_rate=modifiers_rate,
                 cell_weights={
