@@ -320,8 +320,6 @@ if __name__ == "__main__":
         initial_sidebar_state="collapsed",
     )    
 
-    import streamlit as st
-
     st.markdown("""
     <style>
     .responsive-title {
@@ -336,10 +334,10 @@ if __name__ == "__main__":
     /* Cuando la pantalla sea más pequeña que 600px */
     @media (max-width: 600px) {
     .responsive-title {
-        font-size: 24px !important;
+        font-size: 30px !important;
     }
     .responsive-subtitle {
-        font-size: 10px !important;
+        font-size: 8px !important;
     }
     }
     </style>
