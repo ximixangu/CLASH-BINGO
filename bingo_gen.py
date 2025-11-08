@@ -349,8 +349,11 @@ if __name__ == "__main__":
 
     col1, col2, right = st.columns([1, 1, 2])
 
+    col1, col2, right = st.columns([1, 1, 2])
+
     with col1:
-        if st.button("Generate Bingo Card"):
+        btn1_col, btn2_col = st.columns(2)
+        if btn1_col.button("Generate Bingo Card"):
             st.session_state.bingos = generate_bingo_card(
                 modifiers_rate=modifiers_rate,
                 cell_weights={
@@ -363,12 +366,9 @@ if __name__ == "__main__":
                     'elixir': elixir_rate,
                 }
             )
-            st.session_state.bingo_index = 0  # Mostrar siempre el primero por defecto
 
-    with col2:
-        if st.button("Toggle Description"):
+        if btn2_col.button("Toggle Description"):
             st.session_state.bingo_index = 1 - st.session_state.bingo_index
-
 
     if st.session_state.bingos[st.session_state.bingo_index]:
         buf = io.BytesIO()
