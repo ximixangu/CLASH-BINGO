@@ -292,7 +292,7 @@ def generate_bingo_card(
                 mod = True
 
             parr = [text]
-            if mod:
+            if mod == True:
                 parr.append(modifiers_text_list.get(modifier_name, ""))
 
             text_img = multiple_text_image(
