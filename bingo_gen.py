@@ -23,7 +23,7 @@ MISC_DESCRIPTION = {
     'BossBandit_Special.png': "Have one Boss Bandit dash 5 times.",
     'Bowler_Special.png': "Hit 10+ units with 1 Bowler throw.",
     'Buildings.png': "Use a deck only with buildings.",
-    'Coc.png': "Use a deck only with Clash Of Clans units.",
+    'CoC.png': "Use a deck only with Clash Of Clans units.",
     'Commons.png': "Use a deck only with common cards.",
     'Electrics.png': "Use a deck with 6 electric cards.",
     'Epics.png': "Use a deck only with epic cards.",
@@ -316,7 +316,6 @@ def generate_bingo_card(
 
 if __name__ == "__main__":
     st.set_page_config(page_title="Clash Royale Bingo")
-    st.sidebar.title("Clash Royale Bingo")
 
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
