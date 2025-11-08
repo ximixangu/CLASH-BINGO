@@ -223,9 +223,11 @@ def generate_bingo_card(
 if __name__ == "__main__":
     st.title("Bingo Clash Royale")
 
-    # Inicializar estado para la imagen si no existe
-    if "bingo_img" not in st.session_state:
-        st.session_state.bingo_img = None
+    if "bingos" not in st.session_state:
+        st.session_state.bingos = [None, None]
+    if "bingo_index" not in st.session_state:
+        st.session_state.bingo_index = 0
+        
 
     # Layout compacto con columnas para sliders
     with st.expander("Parameters", expanded=False):
@@ -242,9 +244,23 @@ if __name__ == "__main__":
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
-    # Botón para generar bingo
+    # # Botón para generar bingo
+    # if st.button("Generate Bingo"):
+    #     st.session_state.bingo_img = generate_bingo_card(
+    #         modifiers_rate=modifiers_rate,
+    #         cell_weights={
+    #             'last_hit': last_hits_rate,
+    #             'win_condition': win_conditions_rate,
+    #             'misc': misc_rate,
+    #             'triplet': triplet_rate,
+    #             'duplicate': duplicate_rate,
+    #             'arena': arena_rate,
+    #             'elixir': elixir_rate,
+    #         }
+    #     )
+
     if st.button("Generate Bingo"):
-        st.session_state.bingo_img = generate_bingo_card(
+        st.session_state.bingos[0] = generate_bingo_card(
             modifiers_rate=modifiers_rate,
             cell_weights={
                 'last_hit': last_hits_rate,
@@ -256,11 +272,34 @@ if __name__ == "__main__":
                 'elixir': elixir_rate,
             }
         )
+        st.session_state.bingos[1] = generate_bingo_card(
+            modifiers_rate=modifiers_rate,
+            cell_weights={
+                'last_hit': last_hits_rate,
+                'win_condition': win_conditions_rate,
+                'misc': misc_rate,
+                'triplet': triplet_rate,
+                'duplicate': duplicate_rate,
+                'arena': arena_rate,
+                'elixir': elixir_rate,
+            }
+        )
+        st.session_state.bingo_index = 0 # Mostrar siempre el primero por defecto
 
-    # Mostrar imagen persistente si existe
-    if st.session_state.bingo_img:
+    if st.session_state.bingos[st.session_state.bingo_index]:
         buf = io.BytesIO()
-        st.session_state.bingo_img.save(buf, format="PNG")
+        st.session_state.bingos[st.session_state.bingo_index].save(buf, format="PNG")
         buf.seek(0)
-        st.image(buf, caption="Bingo Card", use_column_width=True)
+        st.image(buf, caption=f"Bingo {st.session_state.bingo_index + 1}", use_column_width=True)
+
+    # Botón para alternar
+    if st.button("Alternar Bingo"):
+        st.session_state.bingo_index = 1 - st.session_state.bingo_index
+        
+    # # Mostrar imagen persistente si existe
+    # if st.session_state.bingo_img:
+    #     buf = io.BytesIO()
+    #     st.session_state.bingo_img.save(buf, format="PNG")
+    #     buf.seek(0)
+    #     st.image(buf, caption="Bingo Card", use_column_width=True)
         
