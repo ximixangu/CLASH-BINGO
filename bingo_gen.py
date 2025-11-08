@@ -322,21 +322,19 @@ if __name__ == "__main__":
         st.session_state.bingos = [None, None]
     if "bingo_index" not in st.session_state:
         st.session_state.bingo_index = 0
-        
 
-    with st.sidebar():
-        with st.expander("Parameters", expanded=False):
-            col1, col2 = st.columns(2)
-            with col1:
-                modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
-                triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
-                arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
-                win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
-            with col2:
-                last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
-                duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
-                misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
-                elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
+    with st.sidebar.expander("Parameters", expanded=False):
+        col1, col2 = st.columns(2)
+        with col1:
+            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
+            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
+            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
+            win_conditions_rate = st.slider("Win condition weight", 0.01, 5.0, 1.0)
+        with col2:
+            last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
+            duplicate_rate = st.slider("Duplicate weight", 0.01, 5.0, 1.0)
+            misc_rate = st.slider("Miscellaneous weight", 0.01, 5.0, 1.0)
+            elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
     col1, col2, right = st.columns([1, 1, 2])
