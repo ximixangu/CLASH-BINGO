@@ -289,6 +289,7 @@ def generate_bingo_card(
                 mod_img.thumbnail((90, 90))
                 bingo.paste(mod_img, (x + 105, y + 2), mod_img)
                 bingo_text.paste(mod_img, (x + 105, y + 2), mod_img)
+                mod = True
 
             parr = [text]
             if modifier_name:
@@ -303,7 +304,7 @@ def generate_bingo_card(
             text_img.thumbnail((190, 190))
             bingo_text.paste(text_img, (x, y), text_img)
 
-            modifier_name = None
+            mod = False
             last_img = None
 
     bingo = bingo.resize((1320, 1320))
