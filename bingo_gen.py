@@ -321,8 +321,9 @@ if __name__ == "__main__":
     )    
 
     st.markdown(
-    '<span style="font-size:40px; font-weight:bold;">Clash Royale Bingo</span> '
-    '<span style="color:gray; font-size:14px;">. by @pinxevi</span>',
+    '<span style="font-size:40px; font-weight:bold;">Clash Royale Bingo</span>'
+    '<text> </text>'
+    '<span style="color:gray; font-size:14px;">by @pinxevi</span>',
     unsafe_allow_html=True
     )
 
