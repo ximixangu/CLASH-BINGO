@@ -221,7 +221,7 @@ def generate_bingo_card(
     return bingo
 
 if __name__ == "__main__":
-    st.title("Bingo Clash Royale")
+    st.header("Bingo Clash Royale")
 
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
