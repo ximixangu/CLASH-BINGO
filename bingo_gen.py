@@ -320,12 +320,11 @@ if __name__ == "__main__":
         initial_sidebar_state="collapsed",
     )    
 
-    col1, col2, right = st.columns([3, 2, 1])
-    with col1:
-        st.header("Clash Royale Bingo")
-    with col2:
-        st.markdown("<p style='text-align:center;'>by @pinxevi</p>", unsafe_allow_html=True)
-
+    st.markdown(
+    'Clash Royale Bingo <span style="color:gray; font-size:small;">by @pinxevi</span>',
+    unsafe_allow_html=True
+    )
+       
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
     if "bingo_index" not in st.session_state:
