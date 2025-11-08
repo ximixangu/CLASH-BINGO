@@ -19,7 +19,7 @@ def multiple_text_image(
     spacing_linea=8,
     spacing_parrafo=15
 ):
-    img = Image.new('RGBA', (ancho, alto), (0, 0, 0, 210))
+    img = Image.new('RGBA', (ancho, alto), (0, 0, 0, 200))
     draw = ImageDraw.Draw(img)
 
     try:
