@@ -247,7 +247,7 @@ if __name__ == "__main__":
     col1, col2, right = st.columns([1, 1, 2])
 
     with col1:
-        if st.button("Generate Bingo"):
+        if st.button("Generate Bingo Card"):
             st.session_state.bingos[0] = generate_bingo_card(
                 modifiers_rate=modifiers_rate,
                 cell_weights={
