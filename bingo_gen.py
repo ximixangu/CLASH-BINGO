@@ -372,7 +372,7 @@ if __name__ == "__main__":
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
-    col1, col2, right = st.columns([1, 1, 2])
+    col1, col2, right = st.columns([1, 1, 3])
 
     with col1:
         if st.button("Randomize Card"):
