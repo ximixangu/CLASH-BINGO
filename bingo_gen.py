@@ -331,7 +331,6 @@ if __name__ == "__main__":
     font-size: 14px;
     }
 
-    /* Cuando la pantalla sea más pequeña que 600px */
     @media (max-width: 600px) {
     .responsive-title {
         font-size: 34px !important;
