@@ -1,12 +1,19 @@
 from PIL import Image, ImageDraw, ImageFont
 import textwrap
 
+import os
+from PIL import ImageFont
+
+# Ruta relativa a la fuente en tu proyecto
+
+
+
 def multiple_text_image(
     parrafos,
     colores=None,
     ancho=190,
     alto=190,
-    ruta_fuente='Clash_Regular.otf',
+    ruta_fuente='assets/Clash_Regular.otf',
     tam_fuente=35,
     max_line_length=23,
     spacing_linea=8,
