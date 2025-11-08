@@ -64,7 +64,7 @@ MODIFIERS_DESCRIPTION = {
     'Champion.png': "Have a Champion in your deck.",
     'MegaKnight.png': "Have MK and use it at least once.",
     'Sneaky.png': "Have Golem and use it at least once.",
-    '2v2': "Play on 2v2.",
+    '2v2.png': "Play on 2v2.",
     'elixir_3.png': "Use a deck of 3 or less elixir.",
     'elxir_5.png': "Use a deck of 5 or more elixir.",
     'Time.png': "Win befor x2 elixir.",
