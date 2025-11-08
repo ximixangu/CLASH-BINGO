@@ -373,7 +373,7 @@ if __name__ == "__main__":
             st.image(buf, caption="Card Descriptions", use_column_width=True)
 
     st.write("" \
-    "The objective is to complete any row or column. \n" \
-    "Winning each match is required to cross any cell. \n\n" \
-    "\"Toggle Description\" lets you see each cell objective, as well as modifiers (if any). \n" \
+    "The objective is to complete any row or column.\n\n" \
+    "Winning each match is required to cross any cell.\n\n" \
+    "\"Toggle Description\" lets you see each cell objective, as well as modifiers (if any).\n\n" \
     "You can adjust the likelyhood of each cell type by changing the weight on \"Parameters\", located at the sidebar.")
