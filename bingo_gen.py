@@ -244,7 +244,7 @@ if __name__ == "__main__":
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
         
 
-    col1, col2 = st.columns(2)
+    left, col1, col2, right = st.columns([1, 2, 2, 1])
 
     with col1:
         if st.button("Generate Bingo"):
@@ -275,7 +275,7 @@ if __name__ == "__main__":
             st.session_state.bingo_index = 0  # Mostrar siempre el primero por defecto
 
     with col2:
-        if st.button("Alternar Bingo"):
+        if st.button("Show Descriptions"):
             st.session_state.bingo_index = 1 - st.session_state.bingo_index
 
 
@@ -283,12 +283,7 @@ if __name__ == "__main__":
         buf = io.BytesIO()
         st.session_state.bingos[st.session_state.bingo_index].save(buf, format="PNG")
         buf.seek(0)
-        st.image(buf, caption=f"Bingo {st.session_state.bingo_index + 1}", use_column_width=True)
-
-    # # Mostrar imagen persistente si existe
-    # if st.session_state.bingo_img:
-    #     buf = io.BytesIO()
-    #     st.session_state.bingo_img.save(buf, format="PNG")
-    #     buf.seek(0)
-    #     st.image(buf, caption="Bingo Card", use_column_width=True)
-        
+        if st.session_state.bingo_index == 0:
+            st.image(buf, caption="Bingo", use_column_width=True)
+        else:
+            st.image(buf, caption="Descriptions", use_column_width=True)        
