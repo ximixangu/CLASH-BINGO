@@ -316,6 +316,7 @@ def generate_bingo_card(
 
 if __name__ == "__main__":
     st.set_page_config(page_title="Clash Royale Bingo")
+    st.header("Clash Royale Bingo")
 
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
