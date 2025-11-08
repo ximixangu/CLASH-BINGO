@@ -243,6 +243,8 @@ def generate_bingo_card(
         cell_weights=CELL_TYPE_WEIGHTS
 ):
     global last_img
+    mod = False
+    
     bingo = Image.open(ASSETS_PATH / "empty_card.png")
     bingo = bingo.resize((1000, 1000))
     bingo_text = bingo.copy()
