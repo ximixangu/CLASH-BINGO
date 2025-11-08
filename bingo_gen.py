@@ -320,7 +320,7 @@ if __name__ == "__main__":
         initial_sidebar_state="collapsed",
     )    
 
-    col1, col2, right = st.columns([3, 2, 1])
+    col1, col2, right = st.columns([2, 2, 1])
     with col1:
         st.header("Clash Royale Bingo")
     with col2:
