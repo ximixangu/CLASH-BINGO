@@ -321,10 +321,11 @@ if __name__ == "__main__":
     )    
 
     st.markdown(
-    'Clash Royale Bingo <span style="color:gray; font-size:small;">by @pinxevi</span>',
+    '<span style="font-size:48px; font-weight:bold;">Clash Royale Bingo</span> '
+    '<span style="color:gray; font-size:14px;">by @pinxevi</span>',
     unsafe_allow_html=True
     )
-       
+
     if "bingos" not in st.session_state:
         st.session_state.bingos = [None, None]
     if "bingo_index" not in st.session_state:
