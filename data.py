@@ -215,7 +215,7 @@ BOOST_LIST = [
     "BossBandit.png",
     "Goblinstein.png",
     "Monk.png",
-    "ArcherQueen.png"
+    "ArcherQueen.png",
     "SkeletonKing.png",
     "MightyMiner.png",
     "GoldenKnight.png",
