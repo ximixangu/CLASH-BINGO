@@ -207,6 +207,29 @@ DUPLICATES = [
     ["BarbarianHut.png", "x2.png"],
 ]
 
+BOOST_LIST = [
+    "BarbarianHut.png",
+    "SpiritEmpress.png",
+    "ThreeMusketeers.png",
+    "LavaHound.png"
+    "BossBandit.png",
+    "Goblinstein.png",
+    "Monk.png",
+    "ArcherQueen.png"
+    "SkeletonKing.png",
+    "MightyMiner.png",
+    "GoldenKnight.png",
+    "LittlePrince.png",
+    "Rocket.png",
+    "Mirror.png",
+    "Clone.png",
+    "HogRider.png",
+    "Xbow.png",
+    "Miner.png",
+    "GoblinBarrel.png",
+    "HealSpirit.png",
+]
+
 EXCLUDED_CARDS = [
     "Cannon.png",
     "Tesla.png",

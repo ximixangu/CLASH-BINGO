@@ -4,6 +4,7 @@ CELL_TYPE_WEIGHTS = {
     'misc': 10,
     'triplet': 20,
     'win_condition': 5,
+    'boost': 10,
     'arena': 3,
     'elixir': 3,
 }
@@ -22,11 +23,12 @@ import io
 
 from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES
 from data import TEXT_DESCRIPTION, MISC_DESCRIPTION, MODIFIERS_DESCRIPTION
-from data import INCOMPATIBLE_MODIFIERS, EXCLUDED_CARDS
+from data import INCOMPATIBLE_MODIFIERS, EXCLUDED_CARDS, BOOST_LIST
 
 triplet_list = TRIPLETS_LIST.copy()
 win_conditions = WIN_CONDITIONS.copy()
 duplicates_list = DUPLICATES.copy()
+boost_list = BOOST_LIST.copy()
 text_list = TEXT_DESCRIPTION.copy()
 misc_text_list = MISC_DESCRIPTION.copy()
 modifiers_text_list = MODIFIERS_DESCRIPTION.copy()
@@ -148,6 +150,20 @@ def create_cell_content(cell_type):
             img.thumbnail((190, 190))
         else:
             img = create_cell_content('misc')
+
+    elif cell_type == 'boost':
+        global boost_list
+        card = None
+        card = random.choice(boost_list)
+        last_img = card
+        try:
+            boost_list.remove(card)
+        except ValueError:
+            pass
+
+        if card:
+            load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
+        load_and_paste(img, ASSETS_PATH / "aux/boost.png", (75, 75), (114, 115))
 
     elif cell_type == 'arena':
         img = Image.new('RGBA', (190, 190), (255, 255, 255, 0))
@@ -289,16 +305,20 @@ if __name__ == "__main__":
 
     st.sidebar.header("Settings")
 
+    with st.sidebar:
+        modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
+
+
     with st.sidebar.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
-            modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
-            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
-            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
             win_conditions_rate = st.slider("Wincon weight", 0.01, 5.0, 1.0)
-        with col2:
+            boost_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 0.5)
+        with col2:
+            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
+            arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
             misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
 
@@ -318,6 +338,7 @@ if __name__ == "__main__":
                     'misc': misc_rate,
                     'triplet': triplet_rate,
                     'duplicate': duplicate_rate,
+                    'boost': boost_rate,
                     'arena': arena_rate,
                     'elixir': elixir_rate,
                 },
