@@ -161,9 +161,6 @@ def create_cell_content(cell_type):
         else:
             card = get_random_card(CARDS_PATH, exclude=BOOST_LIST)
 
-        # if card:
-        #     load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
-        # load_and_paste(img, ASSETS_PATH / "aux/boost2.png", (74, 74), (112, 111))
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
         load_and_paste(img, ASSETS_PATH / "aux/boost.png", (80, 80), (116, 107))
