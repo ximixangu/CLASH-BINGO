@@ -314,9 +314,9 @@ if __name__ == "__main__":
             duplicate_rate = st.slider("Dupes weight", 0.01, 10.0, 0.5)
         with col2:
             win_conditions_rate = st.slider("Wincn weight", 0.01, 10.0, 1.0)
-            arena_rate = st.slider("Arena weight", 0.01, 10.0, 0.1)
-            misc_rate = st.slider("Misc. weight", 0.01, 10.0, 2.0)
-            elixir_rate = st.slider("Elixir weight", 0.01, 10.0, 0.1)
+            arena_rate = st.slider("Arena weight", 0.01, 10.0, 0.3)
+            misc_rate = st.slider("Misc. weight", 0.01, 10.0, 4.0)
+            elixir_rate = st.slider("Elixir weight", 0.01, 10.0, 0.3)
 
     with st.sidebar:
         modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
