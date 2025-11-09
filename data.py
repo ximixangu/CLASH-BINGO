@@ -63,6 +63,29 @@ MODIFIERS_DESCRIPTION = {
     '3Crowns.png': "Get three crowns.",
 }
 
+INCOMPATIBLE_MODIFIERS = {
+        'elixir': ['elixir_5.png', 'elixir_3.png'],
+        'Rocket_King_Tower.png': ['TowerActivation.png'],
+        'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
+        'Spells.png': ['Time.png'],
+        'Perfection.png': ['RedCrown.png'],
+        'Buildings.png': ['Time.png', 'elixir_5.png'],
+        'arena': ['elixir_3.png', 'elixir_5.png'],
+        'Random.png': ['elixir_5.png', 'elixir_3.png'],
+        'LetHimCook.png': ['RoyaleChef.png'],
+        'Monk.png': ['Champion.png'],
+        'BossBandit.png': ['Champion.png'],
+        'Goblinstein.png': ['Champion.png'],
+        'LittlePrince.png': ['Champion.png'],
+        'ArcherQueen.png': ['Champion.png'],
+        'GoldenKnight.png': ['Champion.png'],
+        'MightyMiner.png': ['Champion.png'],
+        'SkeletonKing.png': ['Champion.png'],
+        'BossBandit_Special.png': ['Champion.png'],
+        'Monk_Special.png': ['Champion.png'],
+        'LittlePrince_Special.png': ['Champion.png']
+    }
+
 TRIPLETS_LIST = [
     ["ElectroSprit.png", "FireSpirit.png", "IceSpirit.png"],
     ["GoblinDrill.png", "Miner.png", "WallBreakers.png"],

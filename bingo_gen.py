@@ -20,8 +20,9 @@ from PIL import Image
 from text_gen import multiple_text_image
 import io
 
-from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES, EXCLUDED_CARDS
+from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES
 from data import TEXT_DESCRIPTION, MISC_DESCRIPTION, MODIFIERS_DESCRIPTION
+from data import INCOMPATIBLE_MODIFIERS, EXCLUDED_CARDS
 
 triplet_list = TRIPLETS_LIST.copy()
 win_conditions = WIN_CONDITIONS.copy()
@@ -29,6 +30,7 @@ duplicates_list = DUPLICATES.copy()
 text_list = TEXT_DESCRIPTION.copy()
 misc_text_list = MISC_DESCRIPTION.copy()
 modifiers_text_list = MODIFIERS_DESCRIPTION.copy()
+incompatible_modifiers = INCOMPATIBLE_MODIFIERS.copy()
 last_img = None
 
 CARDS_PATH = Path("assets/cards")
@@ -189,26 +191,6 @@ def generate_bingo_card(
     bingo_text = bingo.copy()
 
     modifiers = [f.name for f in MODIFIERS_PATH.glob("*.png")]
-
-    incompatible_modifiers = {
-        'elixir': ['elixir_5.png', 'elixir_3.png'],
-        'Rocket_King_Tower.png': ['TowerActivation.png'],
-        'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
-        'Spells.png': ['Time.png'],
-        'Perfection.png': ['RedCrown.png'],
-        'Buildings.png': ['Time.png', 'elixir_5.png'],
-        'arena': ['elixir_3.png', 'elixir_5.png'],
-        'Random.png': ['elixir_5.png', 'elixir_3.png'],
-        'LetHimCook.png': ['RoyaleChef.png'],
-        'Monk.png': ['Champion.png'],
-        'BossBandit.png': ['Champion.png'],
-        'Goblinstein.png': ['Champion.png'],
-        'LittlePrince.png': ['Champion.png'],
-        'ArcherQueen.png': ['Champion.png'],
-        'GoldenKnight.png': ['Champion.png'],
-        'MightyMiner.png': ['Champion.png'],
-        'SkeletonKing.png': ['Champion.png'],
-    }
 
     for i in range(5):
         for j in range(5):
