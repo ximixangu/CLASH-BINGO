@@ -132,6 +132,14 @@ WIN_CONDITIONS = [
 DUPLICATES = [
     ["ArcherQueen.png", "x3.png"],
     ["Monk.png", "x3.png"],
+    ["SkeletonKing.png", "x3.png"],
+    ["BossBandit.png", "x3.png"],
+    ["MightyMiner.png", "x3.png"],
+    ["ArcherQueen.png", "x3.png"],
+    ["Monk.png", "x3.png"],
+    ["SkeletonKing.png", "x3.png"],
+    ["BossBandit.png", "x3.png"],
+    ["MightyMiner.png", "x3.png"],
 ]
 
 # DUPLICATES = [
