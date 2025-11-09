@@ -305,9 +305,8 @@ if __name__ == "__main__":
 
     st.sidebar.header("Settings")
 
-    with st.sidebar:
-        modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
-
+    # with st.sidebar:
+    #     modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
 
     with st.sidebar.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
