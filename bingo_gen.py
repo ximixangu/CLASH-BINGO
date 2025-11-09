@@ -103,11 +103,13 @@ def create_cell_content(cell_type):
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
         load_and_paste(img, ASSETS_PATH / "aux/crown.png", (75, 75), (109, 124))
+        last_img = card
 
     elif cell_type == 'last_hit':
         global last_hits
         card = None
         card = random.choice(last_hits)
+        last_img = card
         try:
             last_hits.remove(card)
         except ValueError:
@@ -123,6 +125,7 @@ def create_cell_content(cell_type):
             duplicate = random.choice(duplicates_list)
             duplicates_list.remove(duplicate)
             card, count = duplicate
+            last_img = card
 
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
             load_and_paste(img, ASSETS_PATH / f"aux/{count}", (100, 100), (90, 125))
@@ -197,6 +200,14 @@ def generate_bingo_card(
         'arena': ['elixir_3.png', 'elixir_5.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png'],
         'LetHimCook.png': ['RoyaleChef.png'],
+        'Monk.png': ['Champion.png'],
+        'BossBandit.png': ['Champion.png'],
+        'Goblinstein.png': ['Champion.png'],
+        'LittlePrince.png': ['Champion.png'],
+        'ArcherQueen.png': ['Champion.png'],
+        'GoldenKnight.png': ['Champion.png'],
+        'MightyMiner.png': ['Champion.png'],
+        'SkeletonKing.png': ['Champion.png'],
     }
 
     for i in range(5):
