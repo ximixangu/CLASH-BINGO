@@ -21,10 +21,9 @@ from PIL import Image
 from text_gen import multiple_text_image
 import io
 
-from data import TRIPLETS_LIST, WIN_CONDITIONS, DUPLICATES
 from data import TEXT_DESCRIPTION, MISC_DESCRIPTION, MODIFIERS_DESCRIPTION
-from data import INCOMPATIBLE_MODIFIERS, EXCLUDED_CARDS
-from data import BOOST_LIST
+from data import INCOMPATIBLE_MODIFIERS, TRIPLETS_LIST, WIN_CONDITIONS
+from data import DUPLICATES, BOOST_LIST, EXCLUDED_CARDS
 
 triplet_list = TRIPLETS_LIST.copy()
 win_conditions = WIN_CONDITIONS.copy()
