@@ -305,9 +305,6 @@ if __name__ == "__main__":
 
     st.sidebar.header("Settings")
 
-    with st.sidebar:
-        modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
-
     with st.sidebar.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
@@ -320,6 +317,9 @@ if __name__ == "__main__":
             arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
             misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
+
+    with st.sidebar:
+        modifiers_rate = st.slider("Modifier rate", 0.01, 1.0, 0.3)
 
     with st.sidebar: 
         modifier_repetition = st.checkbox('Modifier Repetition', value=True)
