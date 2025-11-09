@@ -35,6 +35,7 @@ MISC_DESCRIPTION = {
     'Perfection.png': "Win without troops reaching your towers.",
     'Prince_Special.png': "Have one Prince do 3 sprints.",
     'Princess_Special.png': "Have one Princess shoot 10 times.",
+    'Tornado_Special.png': "Have Tornado and activate your King Tower.",
     'Random.png': "Use your last oppenent's deck.",
     'Rocket_King_Tower.png': "Rocket the enemy King Tower within 20 seconds.",
     'Skeletons.png': "Use a deck with only skeleton cards.",
@@ -60,7 +61,7 @@ MODIFIERS_DESCRIPTION = {
     'elixir_5.png': "Use a deck of 5 or more elixir.",
     'Time.png': "Destroy a tower before x2 elixir.",
     'TowerActivation.png': "Activate enemy King Tower within 20 seconds.",
-    'TowerActivationSelf.png': "Activate your King Tower before losing towers.",
+    'TowerActivationSelf.png': "Have Tornado and activate your King Tower.",
     'FullTower.png': "Have one side-tower full HP.",
     '3Crowns.png': "Get three crowns.",
     'Evo.png': "One evolution allowed.",
@@ -90,6 +91,7 @@ INCOMPATIBLE_MODIFIERS = {
         'MightyMiner_Special.png': ['Champion.png'],
         'LittlePrince_Special.png': ['Champion.png'],
         'Golem.png': ['Sneaky.png'],
+        'Tornado_Special.png': ['TowerActivationSelf.png'],
     }
 
 TRIPLETS_LIST = [
