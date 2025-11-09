@@ -69,8 +69,8 @@ MODIFIERS_DESCRIPTION = {
     '3Crowns.png': "Get three crowns.",
     'Evo.png': "One evolution allowed.",
     'NoSpells.png': "Use a deck with least spells possible.",
-    'Rarity.png': "Have one card of each rarity.",
-    'Damage.png': "Have all your cards (able to) do damage to towers."
+    'Rarity.png': "Have at least one card of each rarity.",
+    'Damage.png': "All cards able to damage towers must do so."
 }
 
 INCOMPATIBLE_MODIFIERS = {
