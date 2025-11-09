@@ -224,7 +224,7 @@ BOOST_LIST = [
     "Mirror.png",
     "Clone.png",
     "HogRider.png",
-    "Xbow.png",
+    "X-bow.png",
     "Miner.png",
     "GoblinBarrel.png",
     "HealSpirit.png",
