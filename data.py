@@ -30,7 +30,7 @@ MISC_DESCRIPTION = {
     'MegaKnight_Special.png': "Have one MK jump 4 times.",
     'Monk_Special.png': "Hit a tower with any Monk deflected spell.",
     'Mother_Special.png': "Have one Mother Witch summon 10 pigs.",
-    'MightyMiner_Special.png': "Have one Mighty Miner dig 3 times.",
+    'MightyMiner_Special.png': "Have one Mighty Miner destroy 2 towers.",
     'PEKKA_Special.png': "Kill a PEKKA with a Mini PEKKA.",
     'Perfection.png': "Win without troops reaching your towers.",
     'Prince_Special.png': "Have one Prince do 3 sprints.",
