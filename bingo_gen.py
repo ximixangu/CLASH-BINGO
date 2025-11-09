@@ -163,7 +163,7 @@ def create_cell_content(cell_type):
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
-        load_and_paste(img, ASSETS_PATH / "aux/boost2.png", (73, 73), (110, 110))
+        load_and_paste(img, ASSETS_PATH / "aux/boost2.png", (74, 74), (111, 111))
         # if card:
         #     load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
         # load_and_paste(img, ASSETS_PATH / "aux/boost.png", (80, 80), (116, 107))
