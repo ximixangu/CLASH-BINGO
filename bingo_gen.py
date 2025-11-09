@@ -102,7 +102,7 @@ def create_cell_content(cell_type):
             card = random.choice(win_conditions)
             win_conditions.remove(card)
         else:
-            card = get_random_card(CARDS_PATH, exclude=EXCLUDED_CARDS)
+            card = get_random_card(CARDS_PATH, exclude=EXCLUDED_CARDS.append(WIN_CONDITIONS))
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
@@ -114,6 +114,7 @@ def create_cell_content(cell_type):
         card = None
         card = random.choice(last_hits)
         last_img = card
+
         try:
             last_hits.remove(card)
         except ValueError:
@@ -158,7 +159,7 @@ def create_cell_content(cell_type):
             card = random.choice(boost_list)
             boost_list.remove(card)
         else:
-            card = get_random_card(CARDS_PATH)
+            card = get_random_card(CARDS_PATH, exclude=BOOST_LIST)
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
