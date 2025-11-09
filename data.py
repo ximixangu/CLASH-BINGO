@@ -45,6 +45,7 @@ MISC_DESCRIPTION = {
     'Space4.png': "Place troops/buildings only on the displayed squares.",
     'Spells.png': "Use a deck with only spell cards.",
     '3Musketeers_Special.png': "Have all 3 Musketeers hit a tower once.",
+    'elixir6_7.png': "Use a deck only with 6 or 7 elixir cards."
 }
 
 MODIFIERS_DESCRIPTION = {
@@ -66,6 +67,7 @@ MODIFIERS_DESCRIPTION = {
     '3Crowns.png': "Get three crowns.",
     'Evo.png': "One evolution allowed.",
     'NoSpells.png': "Use a deck with least spells possible.",
+    'Rarity.png': "Have one common, rare, epic and legendary."
 }
 
 INCOMPATIBLE_MODIFIERS = {
@@ -74,7 +76,7 @@ INCOMPATIBLE_MODIFIERS = {
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['Time.png', 'NoSpells.png'],
         'Perfection.png': ['RedCrown.png', 'TowerActivationSelf.png'],
-        'Buildings.png': ['Time.png', 'elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png'],
+        'Buildings.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png'],
         'arena': ['elixir_3.png', 'elixir_5.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png'],
         'LetHimCook.png': ['RoyaleChef.png'],
@@ -92,6 +94,7 @@ INCOMPATIBLE_MODIFIERS = {
         'LittlePrince_Special.png': ['Champion.png'],
         'Golem.png': ['Sneaky.png'],
         'Tornado_Special.png': ['TowerActivationSelf.png'],
+        'elixir6_7.png': ['elixir_3.png']
     }
 
 TRIPLETS_LIST = [
