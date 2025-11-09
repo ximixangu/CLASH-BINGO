@@ -83,7 +83,8 @@ INCOMPATIBLE_MODIFIERS = {
         'SkeletonKing.png': ['Champion.png'],
         'BossBandit_Special.png': ['Champion.png'],
         'Monk_Special.png': ['Champion.png'],
-        'LittlePrince_Special.png': ['Champion.png']
+        'LittlePrince_Special.png': ['Champion.png'],
+        'Golem.png': ['Sneaky.png'],
     }
 
 TRIPLETS_LIST = [
