@@ -4,7 +4,8 @@ TEXT_DESCRIPTION = {
     'arena': "Use a deck containing only cards from these arenas.",
     'duplicate': "Have X cards alive on battlefield at once.",
     'elixir': "Use a deck that has X.* elixir average.",
-    'triplet': "Use a deck that contains the three cards."
+    'triplet': "Use a deck that contains the three cards.",
+    'boost': "Can only play X card while in hand."
 }
 
 MISC_DESCRIPTION = {
