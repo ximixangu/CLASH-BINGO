@@ -298,7 +298,7 @@ if __name__ == "__main__":
             win_conditions_rate = st.slider("Wincon weight", 0.01, 5.0, 1.0)
         with col2:
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
-            duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 1.0)
+            duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 0.5)
             misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
 
