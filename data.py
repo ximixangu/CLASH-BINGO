@@ -211,7 +211,7 @@ BOOST_LIST = [
     "BarbarianHut.png",
     "SpiritEmpress.png",
     "ThreeMusketeers.png",
-    "LavaHound.png"
+    "LavaHound.png",
     "BossBandit.png",
     "Goblinstein.png",
     "Monk.png",
