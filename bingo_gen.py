@@ -311,12 +311,12 @@ if __name__ == "__main__":
     with st.sidebar.expander("Parameters", expanded=False):
         col1, col2 = st.columns(2)
         with col1:
-            win_conditions_rate = st.slider("Wincon weight", 0.01, 5.0, 1.0)
+            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
             boost_rate = st.slider("Boost rate", 0.01, 1.0, 0.3)
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 0.5)
         with col2:
-            triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
+            win_conditions_rate = st.slider("Wincon weight", 0.01, 5.0, 1.0)
             arena_rate = st.slider("Arena weight", 0.01, 5.0, 0.1)
             misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
