@@ -163,7 +163,7 @@ def create_cell_content(cell_type):
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
-        load_and_paste(img, ASSETS_PATH / "aux/boost.png", (75, 75), (114, 115))
+        load_and_paste(img, ASSETS_PATH / "aux/boost.png", (77, 77), (120, 113))
 
     elif cell_type == 'arena':
         img = Image.new('RGBA', (190, 190), (255, 255, 255, 0))
@@ -312,7 +312,7 @@ if __name__ == "__main__":
         col1, col2 = st.columns(2)
         with col1:
             triplet_rate = st.slider("Triplet weight", 0.01, 5.0, 1.0)
-            boost_rate = st.slider("Boost rate", 0.01, 1.0, 0.3)
+            boost_rate = st.slider("Boost weight", 0.01, 5.0, 1.0)
             last_hits_rate = st.slider("Last hit weight", 0.01, 5.0, 1.0)
             duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 0.5)
         with col2:
