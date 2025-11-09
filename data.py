@@ -42,7 +42,7 @@ MISC_DESCRIPTION = {
     'Space3.png': "Place troops/buildings only on the displayed squares.",
     'Space4.png': "Place troops/buildings only on the displayed squares.",
     'Spells.png': "Use a deck with only spell cards.",
-    'ThreeMusketeers_Special.png': "Have all your 3 Musketeers hit a tower.",
+    '3Musketeers_Special.png': "Have all your 3 Musketeers hit a tower.",
 }
 
 MODIFIERS_DESCRIPTION = {
