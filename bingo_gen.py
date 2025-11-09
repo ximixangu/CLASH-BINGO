@@ -181,7 +181,8 @@ def create_cell_content(cell_type):
 
 def generate_bingo_card(
         modifiers_rate=MODIFIERS_RANDOM_RATE,
-        cell_weights=CELL_TYPE_WEIGHTS
+        cell_weights=CELL_TYPE_WEIGHTS,
+        modifier_repeats=True,
 ):
     global last_img
     mod = False
@@ -218,6 +219,9 @@ def generate_bingo_card(
                 
                 modifier_name = random.choice(valid_modifiers)
                 mod_img = Image.open(MODIFIERS_PATH / modifier_name)
+                if modifier_repeats == False:
+                    modifiers.remove(modifier_name)
+
                 mod_img.thumbnail((90, 90))
                 bingo.paste(mod_img, (x + 105, y + 2), mod_img)
                 bingo_text.paste(mod_img, (x + 105, y + 2), mod_img)
@@ -297,6 +301,9 @@ if __name__ == "__main__":
             duplicate_rate = st.slider("Dupes weight", 0.01, 5.0, 1.0)
             misc_rate = st.slider("Misc. weight", 0.01, 5.0, 1.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 5.0, 0.1)
+
+    with st.sidebar: 
+        modifier_repetition = st.checkbox('Modifier Repetition', value=True)
         
 
     col1, col2, right = st.columns([1, 1, 2])
@@ -313,7 +320,8 @@ if __name__ == "__main__":
                     'duplicate': duplicate_rate,
                     'arena': arena_rate,
                     'elixir': elixir_rate,
-                }
+                },
+                modifier_repeats=modifier_repetition
             )
             st.session_state.bingo_index = 0  # Mostrar siempre el primero por defecto
 
