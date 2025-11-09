@@ -45,7 +45,8 @@ MISC_DESCRIPTION = {
     'Space4.png': "Place troops/buildings only on the displayed squares.",
     'Spells.png': "Use a deck with only spell cards.",
     '3Musketeers_Special.png': "Have all 3 Musketeers hit a tower once.",
-    'elixir6_7.png': "Use a deck only with 6 or 7 elixir cards."
+    'elixir6_7.png': "Use a deck only with 6 or 7 elixir cards.",
+    'Xbow_Special.png': "Hit all 3 enemy towers with X-bow.",
 }
 
 MODIFIERS_DESCRIPTION = {
@@ -68,7 +69,8 @@ MODIFIERS_DESCRIPTION = {
     '3Crowns.png': "Get three crowns.",
     'Evo.png': "One evolution allowed.",
     'NoSpells.png': "Use a deck with least spells possible.",
-    'Rarity.png': "Have one common, rare, epic and legendary."
+    'Rarity.png': "Have one card of each rarity.",
+    'Damage.png': "Have all your cards (able to) do damage to towers."
 }
 
 INCOMPATIBLE_MODIFIERS = {
