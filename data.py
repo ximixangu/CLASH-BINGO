@@ -30,6 +30,7 @@ MISC_DESCRIPTION = {
     'MegaKnight_Special.png': "Have one MK jump 4 times.",
     'Monk_Special.png': "Hit a tower with any Monk deflected spell.",
     'Mother_Special.png': "Have one Mother Witch summon 10 pigs.",
+    'MightyMiner_Special.png': "Have one Mighty Miner dig 3 times.",
     'PEKKA_Special.png': "Kill a PEKKA with a Mini PEKKA.",
     'Perfection.png': "Win without troops reaching your towers.",
     'Prince_Special.png': "Have one Prince do 3 sprints.",
@@ -59,6 +60,7 @@ MODIFIERS_DESCRIPTION = {
     'elixir_5.png': "Use a deck of 5 or more elixir.",
     'Time.png': "Destroy a tower before x2 elixir.",
     'TowerActivation.png': "Activate enemy King Tower within 20 seconds.",
+    'TowerActivationSelf.png': "Activate your King Tower before losing towers.",
     'FullTower.png': "Have one side-tower full HP.",
     '3Crowns.png': "Get three crowns.",
     'Evo.png': "One evolution allowed.",
@@ -85,6 +87,7 @@ INCOMPATIBLE_MODIFIERS = {
         'SkeletonKing.png': ['Champion.png'],
         'BossBandit_Special.png': ['Champion.png'],
         'Monk_Special.png': ['Champion.png'],
+        'MightyMiner_Special.png': ['Champion.png'],
         'LittlePrince_Special.png': ['Champion.png'],
         'Golem.png': ['Sneaky.png'],
     }
