@@ -70,7 +70,8 @@ MODIFIERS_DESCRIPTION = {
     'Evo.png': "One evolution allowed.",
     'NoSpells.png': "Use a deck with least spells possible.",
     'Rarity.png': "Have at least one card of each rarity.",
-    'Damage.png': "All cards able to damage towers must do so."
+    'Damage.png': "All cards able to damage towers must do so.",
+    'BarbarianHut.png': "Have Barbarian Hut and place at least three.",
 }
 
 INCOMPATIBLE_MODIFIERS = {
@@ -102,6 +103,7 @@ INCOMPATIBLE_MODIFIERS = {
         'Rares.png': ['Rarity.png'],
         'Epics.png': ['Rarity.png'],
         'Legendaries.png': ['Rarity.png'],
+        'BarbarianHut.png': ['BarbarianHut.png']
     }
 
 TRIPLETS_LIST = [
@@ -201,7 +203,8 @@ DUPLICATES = [
     ["Pheonix.png", "x3.png"],
     ["MegaMinion.png", "x3.png"],
     ["WallBreakers.png", "x2.png"],
-    ["IceGolem.png", "x5.png"]
+    ["IceGolem.png", "x5.png"],
+    ["BarbarianHut.png", "x2.png"],
 ]
 
 EXCLUDED_CARDS = [
