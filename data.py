@@ -71,7 +71,7 @@ INCOMPATIBLE_MODIFIERS = {
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['Time.png', 'NoSpells.png'],
         'Perfection.png': ['RedCrown.png'],
-        'Buildings.png': ['Time.png', 'elixir_5.png', 'NoSpells.png'],
+        'Buildings.png': ['Time.png', 'elixir_5.png', 'elixir_3.png', 'NoSpells.png'],
         'arena': ['elixir_3.png', 'elixir_5.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png'],
         'LetHimCook.png': ['RoyaleChef.png'],
