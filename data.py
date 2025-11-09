@@ -61,6 +61,8 @@ MODIFIERS_DESCRIPTION = {
     'TowerActivation.png': "Activate enemy King Tower within 20 seconds.",
     'FullTower.png': "Have one side-tower full HP.",
     '3Crowns.png': "Get three crowns.",
+    'Evo.png': "One evolution allowed.",
+    'NoSpells.png': "Use a deck with least spells possible."
 }
 
 INCOMPATIBLE_MODIFIERS = {
