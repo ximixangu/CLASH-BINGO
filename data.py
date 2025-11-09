@@ -76,8 +76,8 @@ INCOMPATIBLE_MODIFIERS = {
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['Time.png', 'NoSpells.png'],
         'Perfection.png': ['RedCrown.png', 'TowerActivationSelf.png'],
-        'Buildings.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png'],
-        'arena': ['elixir_3.png', 'elixir_5.png'],
+        'Buildings.png': ['Rarity.png', 'elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png'],
+        'arena': ['elixir_3.png', 'elixir_5.png', 'Rarity.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png'],
         'LetHimCook.png': ['RoyaleChef.png'],
         'Monk.png': ['Champion.png'],
@@ -94,7 +94,11 @@ INCOMPATIBLE_MODIFIERS = {
         'LittlePrince_Special.png': ['Champion.png'],
         'Golem.png': ['Sneaky.png'],
         'Tornado_Special.png': ['TowerActivationSelf.png'],
-        'elixir6_7.png': ['elixir_3.png']
+        'elixir6_7.png': ['elixir_3.png'],
+        'Commons.png': ['Rarity.png'],
+        'Rares.png': ['Rarity.png'],
+        'Epics.png': ['Rarity.png'],
+        'Legendaries.png': ['Rarity.png'],
     }
 
 TRIPLETS_LIST = [
