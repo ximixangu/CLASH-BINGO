@@ -318,7 +318,7 @@ if __name__ == "__main__":
         with col2:
             win_conditions_rate = st.slider("Wincn weight", 0.01, 10.0, 1.0)
             arena_rate = st.slider("Arena weight", 0.01, 10.0, 0.1)
-            misc_rate = st.slider("Misc. weight", 0.01, 10.0, 1.0)
+            misc_rate = st.slider("Misc. weight", 0.01, 10.0, 2.0)
             elixir_rate = st.slider("Elixir weight", 0.01, 10.0, 0.1)
 
     with st.sidebar:
