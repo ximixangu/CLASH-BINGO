@@ -163,7 +163,7 @@ def create_cell_content(cell_type):
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
-        load_and_paste(img, ASSETS_PATH / "aux/boost.png", (80, 80), (116, 109))
+        load_and_paste(img, ASSETS_PATH / "aux/boost.png", (80, 80), (116, 107))
 
     elif cell_type == 'arena':
         img = Image.new('RGBA', (190, 190), (255, 255, 255, 0))
