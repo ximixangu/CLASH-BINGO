@@ -106,7 +106,7 @@ def create_cell_content(cell_type):
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
-        load_and_paste(img, ASSETS_PATH / "aux/crown.png", (75, 75), (109, 124))
+        load_and_paste(img, ASSETS_PATH / "aux/crown.png", (80, 80), (109, 124))
         last_img = card
 
     elif cell_type == 'last_hit':
