@@ -154,12 +154,11 @@ def create_cell_content(cell_type):
     elif cell_type == 'boost':
         global boost_list
         card = None
-        card = random.choice(boost_list)
-        last_img = card
-        try:
+        if boost_list and random.random() > WIN_CONDITION_RANDOM_RATE:
+            card = random.choice(boost_list)
             boost_list.remove(card)
-        except ValueError:
-            pass
+        else:
+            card = get_random_card(CARDS_PATH)
 
         if card:
             load_and_paste(img, CARDS_PATH / card, (180, 180), (8, 0))
