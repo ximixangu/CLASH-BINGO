@@ -65,6 +65,7 @@ MODIFIERS_DESCRIPTION = {
     'elixir_5.png': "Use a deck of 5 or more elixir.",
     'Time.png': "Win without overtime.",
     'TimeTower.png': "Destroy a tower before x2 elixir.",
+    'Time5.png': "Win by going to tiebreak.",
     'TowerActivation.png': "Activate enemy King Tower within 20 seconds.",
     'TowerActivationSelf.png': "Have Tornado and activate your King Tower.",
     'FullTower.png': "Have one side-tower full HP.",
@@ -232,7 +233,6 @@ BOOST_LIST = [
     "X-bow.png",
     "Miner.png",
     "GoblinBarrel.png",
-    "HealSpirit.png",
 ]
 
 EXCLUDED_CARDS = [
