@@ -235,6 +235,7 @@ BOOST_LIST = [
     "X-bow.png",
     "Miner.png",
     "GoblinBarrel.png",
+    "RamRider.png",
 ]
 
 EXCLUDED_CARDS = [
