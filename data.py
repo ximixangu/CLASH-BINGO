@@ -1,6 +1,6 @@
 TEXT_DESCRIPTION = {
-    'win_condition': "All tower damage must be done with X.",
-    'last_hit': "Destroy at least one tower with X.",
+    'win_condition': "All tower damage must be done with X card.",
+    'last_hit': "Destroy at least one tower with X card.",
     'arena': "Use a deck containing only cards from these arenas.",
     'duplicate': "Have X cards alive on battlefield at once.",
     'elixir': "Use a deck that has X.* elixir average.",
