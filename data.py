@@ -35,6 +35,7 @@ MISC_DESCRIPTION = {
     'Mother_Special.png': "Have one Mother Witch summon 10 pigs.",
     'MightyMiner_Special.png': "Have one Mighty Miner destroy 2 towers.",
     'PEKKA_Special.png': "Have PEKKA and Mini PEKKA hit a tower.",
+    'MeuAmor.png': "Have one Golem destroy 2 towers.",
     'Perfection.png': "Win without troops reaching your towers.",
     'Prince_Special.png': "Have one Prince do 3 sprints.",
     'Princess_Special.png': "Have one Princess shoot 10 times.",
