@@ -81,7 +81,7 @@ MODIFIERS_DESCRIPTION = {
 }
 
 INCOMPATIBLE_MODIFIERS = {
-        'elixir': ['elixir_5.png', 'elixir_3.png'],
+        'elixir': ['elixir_5.png', 'elixir_3.png', 'HayDay.png'],
         'Rocket_King_Tower.png': ['TowerActivation.png'],
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['NoSpells.png'],
@@ -105,7 +105,7 @@ INCOMPATIBLE_MODIFIERS = {
         'DaggerDuchess_Special.png': ['RoyaleChef.png', 'DaggerDuchess.png', 'Cannoner.png', 'TowerActivationSelf.png', 'RedCrown.png'],
         'Golem.png': ['Sneaky.png'],
         'Tornado_Special.png': ['TowerActivationSelf.png'],
-        'elixir6_7.png': ['elixir_3.png'],
+        'elixir6_7.png': ['elixir_3.png', 'elixir_5.png', 'HayDay.png'],
         'Commons.png': ['Rarity.png'],
         'Rares.png': ['Rarity.png'],
         'Epics.png': ['Rarity.png'],
