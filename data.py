@@ -73,6 +73,7 @@ MODIFIERS_DESCRIPTION = {
     'Rarity.png': "Have at least one card of each rarity.",
     'Damage.png': "All cards able to damage towers must do so.",
     'BarbarianHut.png': "Have Barbarian Hut and place at least three.",
+    'Townhall4.png': "Use a deck with 4 buildings."
 }
 
 INCOMPATIBLE_MODIFIERS = {
@@ -81,7 +82,7 @@ INCOMPATIBLE_MODIFIERS = {
         'KingTower.png': ['TowerActivation.png', 'RedCrown.png', '3Crowns.png'],
         'Spells.png': ['NoSpells.png'],
         'Perfection.png': ['RedCrown.png', 'TowerActivationSelf.png'],
-        'Buildings.png': ['Rarity.png', 'elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png'],
+        'Buildings.png': ['Rarity.png', 'elixir_5.png', 'elixir_3.png', 'NoSpells.png', 'TowerActivationSelf.png', 'Townhall4.png'],
         'arena': ['elixir_3.png', 'elixir_5.png', 'Rarity.png'],
         'Random.png': ['elixir_5.png', 'elixir_3.png', 'NoSpells.png'],
         'LetHimCook.png': ['RoyaleChef.png'],
