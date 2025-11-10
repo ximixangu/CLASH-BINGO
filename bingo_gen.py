@@ -233,14 +233,14 @@ def generate_bingo_card(
                     excluded.update(incompatible_modifiers.get(last_img, []))
                 valid_modifiers = [m for m in modifiers if m not in excluded]
                 
-                modifier_name = random.choice(valid_modifiers)
-                mod_img = Image.open(MODIFIERS_PATH / modifier_name)
-                if modifier_repeats == False:
-                    modifiers.remove(modifier_name)
-
-                mod_img.thumbnail((90, 90))
-                bingo.paste(mod_img, (x + 105, y + 2), mod_img)
-                bingo_text.paste(mod_img, (x + 105, y + 2), mod_img)
+                if valid_modifiers:
+                    modifier_name = random.choice(valid_modifiers)
+                    mod_img = Image.open(MODIFIERS_PATH / modifier_name)
+                    if modifier_repeats == False:
+                        modifiers.remove(modifier_name)
+                    mod_img.thumbnail((90, 90))
+                    bingo.paste(mod_img, (x + 105, y + 2), mod_img)
+                    bingo_text.paste(mod_img, (x + 105, y + 2), mod_img)
                 mod = True
 
             parr = [text]
