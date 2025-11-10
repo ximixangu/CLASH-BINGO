@@ -111,6 +111,7 @@ INCOMPATIBLE_MODIFIERS = {
         'Epics.png': ['Rarity.png'],
         'Legendaries.png': ['Rarity.png'],
         'BarbarianHut.png': ['BarbarianHut.png'],
+        'HayDay.png': ['HayDay.png'],
     }
 
 TRIPLETS_LIST = [
