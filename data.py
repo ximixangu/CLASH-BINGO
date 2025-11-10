@@ -105,6 +105,7 @@ INCOMPATIBLE_MODIFIERS = {
         'LittlePrince_Special.png': ['Champion.png'],
         'DaggerDuchess_Special.png': ['RoyaleChef.png', 'DaggerDuchess.png', 'Cannoner.png', 'TowerActivationSelf.png', 'RedCrown.png'],
         'Golem.png': ['Sneaky.png'],
+        'MeuAmor.png': ['Sneaky.png'],
         'Tornado_Special.png': ['TowerActivationSelf.png'],
         'elixir6_7.png': ['elixir_3.png', 'elixir_5.png', 'HayDay.png'],
         'Commons.png': ['Rarity.png'],
