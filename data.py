@@ -27,7 +27,7 @@ MISC_DESCRIPTION = {
     'Goblins.png': "Use a deck only with goblin cards.",
     'KingTower.png': "Have only your King Tower alive.",
     'Legendaries.png': "Use a deck with only legendary cards.",
-    'LetHimCook.png': "Have a level 18 troop.",
+    'LetHimCook.png': "Have Chef level up a mirror card twice.",
     'LittlePrince_Special.png': "Destroy at least one tower with Guardienne.",
     'Log_Special.png': "Kill a Lumberjack with The Log.",
     'MegaKnight_Special.png': "Have one MK jump 4 times.",
