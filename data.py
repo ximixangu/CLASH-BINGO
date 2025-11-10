@@ -73,7 +73,7 @@ MODIFIERS_DESCRIPTION = {
     'Rarity.png': "Have at least one card of each rarity.",
     'Damage.png': "All cards able to damage towers must do so.",
     'BarbarianHut.png': "Have Barbarian Hut and place at least three.",
-    'Townhall4.png': "Use a deck with 4 buildings."
+    'Townhall4.png': "Use a deck with 4 buildings.",
 }
 
 INCOMPATIBLE_MODIFIERS = {
