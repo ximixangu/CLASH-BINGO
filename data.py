@@ -16,6 +16,7 @@ MISC_DESCRIPTION = {
     'Buildings.png': "Use a deck only with buildings.",
     'CoC.png': "Use a deck only with Clash Of Clans units.",
     'Commons.png': "Use a deck only with common cards.",
+    'DaggerDuchess_Special.png': "Have Dagger Duchess never run out of ammo.",
     'Electrics.png': "Use a deck with 6 electric cards.",
     'Epics.png': "Use a deck only with epic cards.",
     'Executioner_Special.png': "Kill all opponent's unit types with one Executioner",
@@ -98,6 +99,7 @@ INCOMPATIBLE_MODIFIERS = {
         'Monk_Special.png': ['Champion.png'],
         'MightyMiner_Special.png': ['Champion.png'],
         'LittlePrince_Special.png': ['Champion.png'],
+        'DaggerDuchess_Special.png': ['DaggerDuchess'],
         'Golem.png': ['Sneaky.png'],
         'Tornado_Special.png': ['TowerActivationSelf.png'],
         'elixir6_7.png': ['elixir_3.png'],
@@ -105,7 +107,7 @@ INCOMPATIBLE_MODIFIERS = {
         'Rares.png': ['Rarity.png'],
         'Epics.png': ['Rarity.png'],
         'Legendaries.png': ['Rarity.png'],
-        'BarbarianHut.png': ['BarbarianHut.png']
+        'BarbarianHut.png': ['BarbarianHut.png'],
     }
 
 TRIPLETS_LIST = [
